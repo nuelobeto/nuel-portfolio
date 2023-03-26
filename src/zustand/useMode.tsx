@@ -11,7 +11,7 @@ const parsedMode: string | undefined = savedMode
   : undefined;
 
 const useMode = create<ModeT>((set) => ({
-  mode: parsedMode ? parsedMode : "light",
+  mode: parsedMode ? parsedMode : "dark",
   setMode: (mode: string) => set((state) => ({ mode: (state.mode = mode) })),
 }));
 

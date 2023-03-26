@@ -184,6 +184,7 @@ const ThemeSwitch = styled.div<any>`
     position: relative;
 
     &::after {
+      display: block;
       content: "";
       width: 20px;
       aspect-ratio: 1/1;

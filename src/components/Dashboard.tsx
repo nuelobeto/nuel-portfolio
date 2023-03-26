@@ -10,7 +10,9 @@ const Dashboard = ({ children }: ChildrenT) => {
   return (
     <MainWrapper>
       <Sidebar />
-      <MainContent mode={mode}>{children}</MainContent>
+      <MainContent mode={mode}>
+        <ContentWrapper>{children}</ContentWrapper>
+      </MainContent>
     </MainWrapper>
   );
 };
@@ -25,8 +27,17 @@ const MainWrapper = styled.div`
 
 const MainContent = styled.main<any>`
   flex: 1;
-  width: 100vh;
+  height: 100vh;
+  overflow-y: auto;
   background-color: ${(props) =>
     props.mode === "light" ? `#fff` : `${colors.stormy_night}`};
   transition: all 0.5s;
+`;
+
+const ContentWrapper = styled.div`
+  max-width: 1500px;
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  padding: 2rem 1rem;
 `;
