@@ -109,7 +109,7 @@ const Box1 = styled.div`
     font-size: ${fontSizes["5xl"]};
   }
   p {
-    max-width: 90%;
+    max-width: 50%;
     font-size: ${fontSizes.md};
     margin-top: 1rem;
     line-height: 1.8;
