@@ -14,6 +14,8 @@ import {
   TwitterIcon,
 } from "./../assets/icons";
 import { useState } from "react";
+import { colors } from "../config/style.config";
+import useMode from "./../zustand/useMode";
 
 const links = [
   {
@@ -44,7 +46,12 @@ const links = [
 ];
 
 const Sidebar = () => {
-  const [mode, setMode] = useState("light");
+  const { mode, setMode } = useMode((state) => state);
+
+  const handleMode = (mode: string) => {
+    localStorage.setItem("mode", JSON.stringify(mode));
+    setMode(mode);
+  };
 
   return (
     <MainWrapper>
@@ -63,8 +70,8 @@ const Sidebar = () => {
           <ThemeSwitch mode={mode}>
             <span className="light-mode">light</span>
             <button>
-              <LightModeIcon onClick={() => setMode("light")} />
-              <DarkModeIcon onClick={() => setMode("dark")} />
+              <LightModeIcon onClick={() => handleMode("light")} />
+              <DarkModeIcon onClick={() => handleMode("dark")} />
             </button>
             <span className="dark-mode">dark</span>
           </ThemeSwitch>
@@ -84,7 +91,7 @@ export default Sidebar;
 const MainWrapper = styled.aside`
   width: 220px;
   height: 100vh;
-  background-color: #141618;
+  background-color: ${colors.midnight_blue};
   padding: 2rem 1rem;
   position: relative;
 `;
@@ -120,12 +127,12 @@ const Links = styled.div`
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    color: #797979;
+    color: ${colors.moonstone};
 
     &.active,
     &:hover {
-      background-color: #2a2d31;
-      color: #f3f3f3;
+      background-color: ${colors.stormy_night};
+      color: ${colors.pearl_mist};
     }
 
     svg {
@@ -154,18 +161,20 @@ const ThemeSwitch = styled.div<any>`
   font-size: 13px;
 
   .light-mode {
-    color: ${(props) => (props.mode === "light" ? "#f3f3f3" : "#797979")};
+    color: ${(props) =>
+      props.mode === "light" ? `${colors.pearl_mist}` : `${colors.moonstone}`};
     transition: all 0.2s;
   }
 
   .dark-mode {
-    color: ${(props) => (props.mode === "dark" ? "#f3f3f3" : "#797979")};
+    color: ${(props) =>
+      props.mode === "dark" ? `${colors.pearl_mist}` : `${colors.moonstone}`};
     transition: all 0.2s;
   }
 
   button {
     flex: 1;
-    border: 1px solid #797979;
+    border: 1px solid ${colors.moonstone};
     background-color: transparent;
     border-radius: 15px;
     display: flex;
@@ -180,7 +189,7 @@ const ThemeSwitch = styled.div<any>`
       aspect-ratio: 1/1;
       border-radius: 50px;
       position: absolute;
-      background-color: #f0cd6b;
+      background-color: ${colors.golden_sun};
       cursor: pointer;
       transform: ${(props) =>
         props.mode === "light" ? "translateX(0)" : "translateX(200%)"};
@@ -191,10 +200,10 @@ const ThemeSwitch = styled.div<any>`
       font-size: 20px;
       border-radius: 50%;
       cursor: pointer;
+      color: ${colors.moonstone};
 
       &:hover {
-        background-color: #2a2d31;
-        color: #aaaaaa;
+        background-color: ${colors.stormy_night};
       }
     }
   }
@@ -209,11 +218,11 @@ const Socials = styled.div`
 
   svg {
     font-size: 20px;
-    color: #797979;
+    color: ${colors.moonstone};
     cursor: pointer;
 
     &:hover {
-      color: #f3f3f3;
+      color: ${colors.pearl_mist};
     }
   }
 `;
