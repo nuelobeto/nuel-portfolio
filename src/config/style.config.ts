@@ -19,4 +19,5 @@ export const fontSizes = {
   "3xl": "36px",
   "4xl": "40px",
   "5xl": "44px",
+  "6xl": "50px",
 };

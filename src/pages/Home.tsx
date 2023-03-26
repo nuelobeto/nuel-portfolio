@@ -90,23 +90,27 @@ export default Home;
 
 const HomeWrapper = styled.div`
   display: flex;
+  height: 100%;
   gap: 1rem;
   padding: 3rem 1rem;
+  justify-content: center;
 `;
 
 const Box1 = styled.div`
-  flex: 1;
+  width: 60%;
+  height: 100%;
   color: ${colors.pearl_mist};
   display: flex;
   flex-direction: column;
+  justify-content: center;
   h1 {
     font-size: ${fontSizes.md};
   }
   h2 {
-    font-size: ${fontSizes["5xl"]};
+    font-size: ${fontSizes["6xl"]};
   }
   h3 {
-    font-size: ${fontSizes["5xl"]};
+    font-size: ${fontSizes["6xl"]};
   }
   p {
     max-width: 50%;
@@ -134,7 +138,6 @@ const Box1 = styled.div`
 
 const Box2 = styled.div`
   width: 350px;
-  height: 300px;
   border-radius: 8px;
 
   h2 {
