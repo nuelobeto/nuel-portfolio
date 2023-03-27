@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SkillT } from "../types/types";
-import { colors } from "./../config/style.config";
+import { colors, shadow } from "./../config/style.config";
 
 const Skill = ({ img, name, level, color }: SkillT) => {
   return (
@@ -20,7 +20,7 @@ const SkillWrapper = styled.div<any>`
   padding: 1rem;
   border-radius: 8px;
   background-color: ${colors.forest_stone};
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  box-shadow: ${shadow.base};
 
   .skill {
     display: flex;

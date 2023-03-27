@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Dashboard from "./../components/Dashboard";
-import { colors, fontSizes } from "./../config/style.config";
+import { colors, fontSizes, media } from "./../config/style.config";
 import Skill from "./../components/Skill";
 import {
   ETHERS_IMG,
@@ -9,8 +9,10 @@ import {
   JAVASCRIPT_IMG,
   SOLIDITY_IMG,
   PYTHON_IMG,
+  TECHGUY_IMG,
 } from "../assets/images";
 import { SkillT } from "../types/types";
+import { useEffect, useState } from "react";
 
 const Home = () => {
   const skills: SkillT[] = [
@@ -51,6 +53,16 @@ const Home = () => {
       color: "#3776AB",
     },
   ];
+  const [viewportWidth, setviewPortWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setviewPortWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, [viewportWidth]);
+
   return (
     <Dashboard>
       <HomeWrapper>
@@ -90,10 +102,14 @@ export default Home;
 
 const HomeWrapper = styled.div`
   display: flex;
-  height: 100%;
   gap: 1rem;
-  padding: 3rem 1rem;
+  height: 100vh;
   justify-content: center;
+  @media (max-width: ${media.md}) {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 0;
+  }
 `;
 
 const Box1 = styled.div`
@@ -103,17 +119,21 @@ const Box1 = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: ${media.md}) {
+    width: 100%;
+    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
+  }
   h1 {
     font-size: ${fontSizes.md};
   }
-  h2 {
-    font-size: ${fontSizes["6xl"]};
-  }
+  h2,
   h3 {
-    font-size: ${fontSizes["6xl"]};
+    font-size: clamp(${fontSizes["2xl"]}, 4vw, ${fontSizes["6xl"]});
   }
   p {
-    max-width: 50%;
+    max-width: 90%;
     font-size: ${fontSizes.md};
     margin-top: 1rem;
     line-height: 1.8;
@@ -122,8 +142,15 @@ const Box1 = styled.div`
   .btns {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
+    @media (max-width: ${media.sm}) {
+      flex-direction: column;
+      gap: 0.75rem;
+      button {
+        width: 300px;
+      }
+    }
     button {
       padding: 1rem 2rem;
       border: 1px solid transparent;
@@ -138,7 +165,16 @@ const Box1 = styled.div`
 
 const Box2 = styled.div`
   width: 350px;
+  height: 100%;
   border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: ${media.md}) {
+    width: 100%;
+  }
 
   h2 {
     font-size: ${fontSizes.md};
@@ -146,6 +182,8 @@ const Box2 = styled.div`
     margin-bottom: 1rem;
   }
   .skills {
+    max-width: 450px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;

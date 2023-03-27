@@ -21,3 +21,14 @@ export const fontSizes = {
   "5xl": "44px",
   "6xl": "50px",
 };
+
+export const shadow = {
+  base: "0 3px 10px rgb(0 0 0 / 0.2)",
+};
+
+export const media = {
+  sm: "480px",
+  md: "768px",
+  lg: "960px",
+  xl: "1000px",
+};

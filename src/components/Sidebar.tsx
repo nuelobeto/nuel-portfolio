@@ -14,7 +14,7 @@ import {
   TwitterIcon,
 } from "./../assets/icons";
 import { useState } from "react";
-import { colors } from "../config/style.config";
+import { colors, media } from "../config/style.config";
 import useMode from "./../zustand/useMode";
 
 const links = [
@@ -94,6 +94,9 @@ const MainWrapper = styled.aside`
   background-color: ${colors.midnight_blue};
   padding: 2rem 1rem;
   position: relative;
+  @media (max-width: ${media.xl}) {
+    display: none;
+  }
 `;
 
 const ImageCard = styled.img`
