@@ -9,10 +9,8 @@ import {
   JAVASCRIPT_IMG,
   SOLIDITY_IMG,
   PYTHON_IMG,
-  TECHGUY_IMG,
 } from "../assets/images";
 import { SkillT } from "../types/types";
-import { useEffect, useState } from "react";
 
 const Home = () => {
   const skills: SkillT[] = [
@@ -52,16 +50,13 @@ const Home = () => {
       level: "20%",
       color: "#3776AB",
     },
+    {
+      img: PYTHON_IMG,
+      name: "Python",
+      level: "20%",
+      color: "#3776AB",
+    },
   ];
-  const [viewportWidth, setviewPortWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setviewPortWidth(window.innerWidth);
-    };
-
-    window.addEventListener("resize", handleResize);
-  }, [viewportWidth]);
 
   return (
     <Dashboard>
@@ -81,7 +76,7 @@ const Home = () => {
         </Box1>
         <Box2>
           <h2>My skills</h2>
-          <div className="skills">
+          <div className="skills scroll">
             {skills.map((skill, index) => (
               <Skill
                 key={index}
@@ -105,10 +100,13 @@ const HomeWrapper = styled.div`
   gap: 1rem;
   height: 100vh;
   justify-content: center;
+  @media (max-width: ${media.xl}) {
+    height: 92vh;
+  }
   @media (max-width: ${media.md}) {
     flex-direction: column;
     height: auto;
-    padding: 2rem 0;
+    padding: 4rem 0;
   }
 `;
 
@@ -164,7 +162,7 @@ const Box1 = styled.div`
 `;
 
 const Box2 = styled.div`
-  width: 350px;
+  width: 370px;
   height: 100%;
   border-radius: 8px;
   display: flex;
@@ -183,9 +181,15 @@ const Box2 = styled.div`
   }
   .skills {
     max-width: 450px;
+    max-height: 615px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
+    overflow-y: auto;
+    padding: 5px 10px;
+    @media (max-width: ${media.md}) {
+      max-height: fit-content;
+    }
   }
 `;

@@ -2,16 +2,30 @@ import styled from "styled-components";
 import { ChildrenT } from "../types/types";
 import useMode from "../zustand/useMode";
 import Sidebar from "./Sidebar";
-import { colors } from "./../config/style.config";
+import { colors, media } from "./../config/style.config";
+import { useEffect, useState } from "react";
+import Navbar from "./Navbar";
+import Footer from "./Footer";
 
 const Dashboard = ({ children }: ChildrenT) => {
-  const { mode, setMode } = useMode((state) => state);
+  const { mode } = useMode((state) => state);
+  const [viewportWidth, setviewPortWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setviewPortWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+  }, [viewportWidth]);
 
   return (
     <MainWrapper>
       <Sidebar />
       <MainContent mode={mode}>
+        {viewportWidth <= 1000 && <Navbar />}
         <ContentWrapper>{children}</ContentWrapper>
+        {viewportWidth <= 1000 && <Footer />}
       </MainContent>
     </MainWrapper>
   );
@@ -31,6 +45,7 @@ const MainContent = styled.main<any>`
   background-color: ${(props) =>
     props.mode === "light" ? `#fff` : `${colors.stormy_night}`};
   transition: all 0.5s;
+  position: relative;
 `;
 
 const ContentWrapper = styled.div`
@@ -38,4 +53,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   margin: auto;
   padding: 0 1rem;
+  @media (max-width: ${media.xl}) {
+    margin-top: 8vh;
+  }
 `;
