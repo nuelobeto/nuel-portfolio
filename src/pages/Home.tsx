@@ -50,12 +50,6 @@ const Home = () => {
       level: "20%",
       color: "#3776AB",
     },
-    {
-      img: PYTHON_IMG,
-      name: "Python",
-      level: "20%",
-      color: "#3776AB",
-    },
   ];
 
   return (
