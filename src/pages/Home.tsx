@@ -12,6 +12,7 @@ import {
 } from "../assets/images";
 import { SkillT } from "../types/types";
 import useMode from "./../zustand/useMode";
+import { Link } from "react-router-dom";
 
 const skills: SkillT[] = [
   {
@@ -67,7 +68,9 @@ const Home = () => {
             interfaces and experiences.
           </p>
           <div className="btns">
-            <button>Check out my works</button>
+            <Link to="/projects">
+              <button>Check out my works</button>
+            </Link>
             <button>My Resume</button>
           </div>
         </Box1>

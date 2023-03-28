@@ -9,9 +9,12 @@ const Footer = () => {
   return (
     <FooterWrapper mode={mode}>
       <FooterSocials mode={mode}>
-        <GithubIcon />
-        <LinkedInIcon />
-        <TwitterIcon />
+        <a href="https://github.com/nuelobeto">
+          <GithubIcon />
+        </a>
+        <a href="https://www.linkedin.com/in/nuel-obeto/">
+          <LinkedInIcon />
+        </a>
       </FooterSocials>
       <p>Built with React TS and Node</p>
     </FooterWrapper>

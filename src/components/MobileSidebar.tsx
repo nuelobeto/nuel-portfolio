@@ -85,9 +85,12 @@ const MobileSidebar = ({ showSidebar, setShowSideBar }: PropsT) => {
               <span className="dark-mode">dark</span>
             </ThemeSwitch>
             <Socials>
-              <GithubIcon />
-              <LinkedInIcon />
-              <TwitterIcon />
+              <a href="https://github.com/nuelobeto">
+                <GithubIcon />
+              </a>
+              <a href="https://www.linkedin.com/in/nuel-obeto/">
+                <LinkedInIcon />
+              </a>
             </Socials>
           </ToolBox>
         </Toolbar>
