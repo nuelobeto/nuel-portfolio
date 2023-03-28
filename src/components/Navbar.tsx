@@ -4,14 +4,21 @@ import { colors } from "./../config/style.config";
 import { MenuIcon } from "./../assets/icons";
 import { Link } from "react-router-dom";
 import useMode from "./../zustand/useMode";
+import { useState } from "react";
+import MobileSidebar from "./MobileSidebar";
 
 const Navbar = () => {
   const { mode } = useMode((state) => state);
+  const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <Nav mode={mode}>
       <Link to="/">Nuel Obeto</Link>
-      <MenuIcon />
+      <MenuIcon onClick={() => setShowSidebar(true)} />
+      <MobileSidebar
+        showSidebar={showSidebar}
+        setShowSideBar={setShowSidebar}
+      />
     </Nav>
   );
 };

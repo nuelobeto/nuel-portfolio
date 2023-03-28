@@ -1,20 +1,21 @@
-import { NavLink } from "react-router-dom";
 import styled from "styled-components";
-import { TECHGUY_IMG } from "./../assets/images";
 import {
   AboutIcon,
-  BlogIcon,
+  CloseIcon,
   ContactIcon,
-  DarkModeIcon,
   GithubIcon,
-  HomeIcon,
   LightModeIcon,
-  LinkedInIcon,
-  ProjectIcon,
   TwitterIcon,
+} from "../assets/icons";
+import { colors, fontSizes } from "./../config/style.config";
+import {
+  HomeIcon,
+  ProjectIcon,
+  BlogIcon,
+  DarkModeIcon,
+  LinkedInIcon,
 } from "./../assets/icons";
-import { useState } from "react";
-import { colors, media } from "../config/style.config";
+import { NavLink } from "react-router-dom";
 import useMode from "./../zustand/useMode";
 
 const links = [
@@ -45,7 +46,12 @@ const links = [
   },
 ];
 
-const Sidebar = () => {
+type PropsT = {
+  showSidebar: boolean;
+  setShowSideBar: React.Dispatch<React.SetStateAction<boolean>>;
+};
+
+const MobileSidebar = ({ showSidebar, setShowSideBar }: PropsT) => {
   const { mode, setMode } = useMode((state) => state);
 
   const handleMode = (mode: string) => {
@@ -54,62 +60,75 @@ const Sidebar = () => {
   };
 
   return (
-    <MainWrapper>
-      <Name>Nuel Obeto</Name>
-      <ImageCard src={TECHGUY_IMG} />
-      <Toolbar>
-        <Links>
-          {links.map((link, index) => (
-            <NavLink to={`${link.url}`} key={index}>
-              {link.icon} {link.name}
-            </NavLink>
-          ))}
-        </Links>
+    <MobileSidebarWrapper show={showSidebar}>
+      <Sidebar show={showSidebar}>
+        <CloseIcon
+          className="close-btn"
+          onClick={() => setShowSideBar(false)}
+        />
+        <Toolbar>
+          <Links>
+            {links.map((link, index) => (
+              <NavLink to={`${link.url}`} key={index}>
+                {link.icon} {link.name}
+              </NavLink>
+            ))}
+          </Links>
 
-        <ToolBox>
-          <ThemeSwitch mode={mode}>
-            <span className="light-mode">light</span>
-            <button>
-              <LightModeIcon onClick={() => handleMode("light")} />
-              <DarkModeIcon onClick={() => handleMode("dark")} />
-            </button>
-            <span className="dark-mode">dark</span>
-          </ThemeSwitch>
-          <Socials>
-            <GithubIcon />
-            <LinkedInIcon />
-            <TwitterIcon />
-          </Socials>
-        </ToolBox>
-      </Toolbar>
-    </MainWrapper>
+          <ToolBox>
+            <ThemeSwitch mode={mode}>
+              <span className="light-mode">light</span>
+              <button>
+                <LightModeIcon onClick={() => handleMode("light")} />
+                <DarkModeIcon onClick={() => handleMode("dark")} />
+              </button>
+              <span className="dark-mode">dark</span>
+            </ThemeSwitch>
+            <Socials>
+              <GithubIcon />
+              <LinkedInIcon />
+              <TwitterIcon />
+            </Socials>
+          </ToolBox>
+        </Toolbar>
+      </Sidebar>
+    </MobileSidebarWrapper>
   );
 };
 
-export default Sidebar;
+export default MobileSidebar;
 
-const MainWrapper = styled.aside`
-  width: 220px;
+const MobileSidebarWrapper = styled.div<any>`
+  width: 100%;
+  height: 100vh;
+  background-color: #00000073;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all 0.5s;
+  opacity: ${(props) => (props.show ? "1" : "0")};
+  pointer-events: ${(props) => (props.show ? "all" : "none")};
+`;
+
+const Sidebar = styled.div<any>`
+  width: 300px;
   height: 100vh;
   background-color: ${colors.midnight_blue};
   padding: 2rem 1rem;
   position: relative;
-  @media (max-width: ${media.xl}) {
-    display: none;
+  transform: ${(props) => (props.show ? "translateX(0)" : "translateX(110%)")};
+  transition: all 0.5s;
+
+  .close-btn {
+    font-size: 25px;
+    color: ${colors.white};
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    cursor: pointer;
   }
-`;
-
-const ImageCard = styled.img`
-  width: 100%;
-  object-fit: contain;
-  border-radius: 8px;
-`;
-
-const Name = styled.h1`
-  color: #fff;
-  text-align: center;
-  font-size: 22px;
-  margin-bottom: 1rem;
 `;
 
 const Toolbar = styled.div`
@@ -120,13 +139,13 @@ const Toolbar = styled.div`
 const Links = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 2rem 0;
+  padding: 4rem 0;
   gap: 0.5rem;
 
   a {
-    padding: 0.75rem 1rem;
+    padding: 1rem;
     border-radius: 8px;
-    font-size: 14px;
+    font-size: 15px;
     display: flex;
     align-items: center;
     gap: 0.5rem;

@@ -10,6 +10,7 @@ import {
   MdModeComment,
   MdLightMode,
   MdDarkMode,
+  MdClose,
 } from "react-icons/md";
 import { BsTwitter } from "react-icons/bs";
 import { BiMenuAltRight } from "react-icons/bi";
@@ -25,3 +26,4 @@ export const GithubIcon = AiFillGithub;
 export const LinkedInIcon = AiFillLinkedin;
 export const TwitterIcon = BsTwitter;
 export const MenuIcon = BiMenuAltRight;
+export const CloseIcon = MdClose;
