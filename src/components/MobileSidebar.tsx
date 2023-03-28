@@ -196,13 +196,13 @@ const ThemeSwitch = styled.div<any>`
   .light-mode {
     color: ${(props) =>
       props.mode === "light" ? `${colors.pearl_mist}` : `${colors.moonstone}`};
-    transition: all 0.2s;
+    transition: all 0.2s !important;
   }
 
   .dark-mode {
     color: ${(props) =>
       props.mode === "dark" ? `${colors.pearl_mist}` : `${colors.moonstone}`};
-    transition: all 0.2s;
+    transition: all 0.2s !important;
   }
 
   button {
@@ -227,7 +227,7 @@ const ThemeSwitch = styled.div<any>`
       cursor: pointer;
       transform: ${(props) =>
         props.mode === "light" ? "translateX(0)" : "translateX(200%)"};
-      transition: all 0.2s;
+      transition: all 0.2s !important;
     }
 
     svg {
