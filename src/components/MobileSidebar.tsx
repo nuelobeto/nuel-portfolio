@@ -243,7 +243,7 @@ const Socials = styled.div`
   padding: 1rem 0 0;
 
   svg {
-    font-size: 20px;
+    font-size: 25px;
     color: ${colors.moonstone};
     cursor: pointer;
 

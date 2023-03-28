@@ -50,7 +50,7 @@ const Nav = styled.nav<any>`
       props.mode === "light" ? `${colors.midnight_blue}` : `${colors.white}`};
   }
 
-  svg {
+  & > svg {
     font-size: ${fontSizes["2xl"]};
     cursor: pointer;
   }
