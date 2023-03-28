@@ -9,10 +9,14 @@ const Footer = () => {
   return (
     <FooterWrapper mode={mode}>
       <FooterSocials mode={mode}>
-        <a href="https://github.com/nuelobeto">
+        <a href="https://github.com/nuelobeto" target="_blank" rel="noreferrer">
           <GithubIcon />
         </a>
-        <a href="https://www.linkedin.com/in/nuel-obeto/">
+        <a
+          href="https://www.linkedin.com/in/nuel-obeto/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <LinkedInIcon />
         </a>
       </FooterSocials>
