@@ -145,7 +145,7 @@ const Links = styled.div`
   a {
     padding: 1rem;
     border-radius: 8px;
-    font-size: 15px;
+    font-size: 14px;
     display: flex;
     align-items: center;
     gap: 0.5rem;
