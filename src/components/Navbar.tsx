@@ -43,7 +43,7 @@ const Nav = styled.nav<any>`
   color: ${(props) =>
     props.mode === "light" ? `${colors.midnight_blue}` : `${colors.white}`};
 
-  a {
+  & > a {
     font-size: ${fontSizes.lg};
     font-weight: 600;
     color: ${(props) =>
