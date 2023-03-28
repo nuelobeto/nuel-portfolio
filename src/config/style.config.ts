@@ -2,10 +2,14 @@ export const colors = {
   midnight_blue: "#141618",
   stormy_night: "#2a2d31",
   golden_sun: "#f0cd6b",
+  buttercream: "#f8e8a2",
   white: "#fff",
+  black: "#000",
   moonstone: "#797979",
   pearl_mist: "#f3f3f3",
   forest_stone: "#303438",
+  whisper_white: "#fdfdfd",
+  breezy_blue: "#f9fafb",
 };
 
 export const fontSizes = {
@@ -23,7 +27,7 @@ export const fontSizes = {
 };
 
 export const shadow = {
-  base: "0 3px 10px rgb(0 0 0 / 0.2)",
+  base: "0 3px 8px rgb(0 0 0 / 0.2)",
 };
 
 export const media = {

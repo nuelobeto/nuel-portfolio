@@ -11,51 +11,54 @@ import {
   PYTHON_IMG,
 } from "../assets/images";
 import { SkillT } from "../types/types";
+import useMode from "./../zustand/useMode";
+
+const skills: SkillT[] = [
+  {
+    img: JAVASCRIPT_IMG,
+    name: "Javascript",
+    level: "90%",
+    color: "#F7DF1E",
+  },
+  {
+    img: REACT_IMG,
+    name: "React",
+    level: "80%",
+    color: "#61DAFB",
+  },
+  {
+    img: NODE_IMG,
+    name: "Node",
+    level: "60%",
+    color: "#3C873A",
+  },
+  {
+    img: SOLIDITY_IMG,
+    name: "Solidity",
+    level: "40%",
+    color: "#212121",
+  },
+  {
+    img: ETHERS_IMG,
+    name: "Ethers JS",
+    level: "40%",
+    color: "#8C8C8E",
+  },
+  {
+    img: PYTHON_IMG,
+    name: "Python",
+    level: "20%",
+    color: "#3776AB",
+  },
+];
 
 const Home = () => {
-  const skills: SkillT[] = [
-    {
-      img: JAVASCRIPT_IMG,
-      name: "Javascript",
-      level: "90%",
-      color: "#F7DF1E",
-    },
-    {
-      img: REACT_IMG,
-      name: "React",
-      level: "80%",
-      color: "#61DAFB",
-    },
-    {
-      img: NODE_IMG,
-      name: "Node",
-      level: "60%",
-      color: "#3C873A",
-    },
-    {
-      img: SOLIDITY_IMG,
-      name: "Solidity",
-      level: "40%",
-      color: "#212121",
-    },
-    {
-      img: ETHERS_IMG,
-      name: "Ethers JS",
-      level: "40%",
-      color: "#8C8C8E",
-    },
-    {
-      img: PYTHON_IMG,
-      name: "Python",
-      level: "20%",
-      color: "#3776AB",
-    },
-  ];
+  const { mode } = useMode((state) => state);
 
   return (
     <Dashboard>
       <HomeWrapper>
-        <Box1>
+        <Box1 mode={mode}>
           <h1>Hi, my name is</h1>
           <h2>Obeto Emmanuel.</h2>
           <h3>I build things for the web.</h3>
@@ -68,9 +71,11 @@ const Home = () => {
             <button>My Resume</button>
           </div>
         </Box1>
-        <Box2>
+        <Box2 mode={mode}>
           <h2>My skills</h2>
-          <div className="skills scroll">
+          <div
+            className={`skills ${mode === "light" ? "scroll-light" : "scroll"}`}
+          >
             {skills.map((skill, index) => (
               <Skill
                 key={index}
@@ -104,10 +109,13 @@ const HomeWrapper = styled.div`
   }
 `;
 
-const Box1 = styled.div`
+const Box1 = styled.div<any>`
   width: 60%;
   height: 100%;
-  color: ${colors.pearl_mist};
+  color: ${(props) =>
+    props.mode === "light"
+      ? `${colors.midnight_blue}`
+      : `${colors.pearl_mist}`};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -129,7 +137,10 @@ const Box1 = styled.div`
     font-size: ${fontSizes.md};
     margin-top: 1rem;
     line-height: 1.8;
-    color: ${colors.moonstone};
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.stormy_night}`
+        : `${colors.moonstone}`};
   }
   .btns {
     display: flex;
@@ -147,15 +158,26 @@ const Box1 = styled.div`
       padding: 1rem 2rem;
       border: 1px solid transparent;
       border-radius: 8px;
-      background-color: ${colors.golden_sun};
-      color: ${colors.midnight_blue};
+      background-color: ${(props) =>
+        props.mode === "light"
+          ? `${colors.midnight_blue}`
+          : `${colors.golden_sun}`};
+      color: ${(props) =>
+        props.mode === "light" ? `${colors.white}` : `${colors.midnight_blue}`};
       font-weight: 700;
       font-size: ${fontSizes.sm};
+
+      &:hover {
+        background-color: ${(props) =>
+          props.mode === "light"
+            ? `${colors.stormy_night}`
+            : `${colors.buttercream}`};
+      }
     }
   }
 `;
 
-const Box2 = styled.div`
+const Box2 = styled.div<any>`
   width: 370px;
   height: 100%;
   border-radius: 8px;
@@ -170,7 +192,10 @@ const Box2 = styled.div`
 
   h2 {
     font-size: ${fontSizes.md};
-    color: ${colors.pearl_mist};
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.midnight_blue}`
+        : `${colors.pearl_mist}`};
     margin-bottom: 1rem;
   }
   .skills {

@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { SkillT } from "../types/types";
 import { colors, shadow } from "./../config/style.config";
+import useMode from "./../zustand/useMode";
 
 const Skill = ({ img, name, level, color }: SkillT) => {
+  const { mode } = useMode((state) => state);
+
   return (
-    <SkillWrapper color={color} level={level}>
+    <SkillWrapper color={color} level={level} mode={mode}>
       <div className="skill">
         <img src={img} alt="" />
         <span>{name}</span>
@@ -19,7 +22,10 @@ export default Skill;
 const SkillWrapper = styled.div<any>`
   padding: 1rem;
   border-radius: 8px;
-  background-color: ${colors.forest_stone};
+  background-color: ${(props) =>
+    props.mode === "light"
+      ? `${colors.breezy_blue}`
+      : `${colors.forest_stone}`};
   box-shadow: ${shadow.base};
 
   .skill {
@@ -33,7 +39,10 @@ const SkillWrapper = styled.div<any>`
     }
     span {
       font-weight: 600;
-      color: ${colors.pearl_mist};
+      color: ${(props) =>
+        props.mode === "light"
+          ? `${colors.forest_stone}`
+          : `${colors.pearl_mist}`};
     }
   }
 

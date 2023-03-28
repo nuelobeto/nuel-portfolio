@@ -43,7 +43,9 @@ const MainContent = styled.main<any>`
   min-height: 100vh;
   overflow-y: auto;
   background-color: ${(props) =>
-    props.mode === "light" ? `#fff` : `${colors.stormy_night}`};
+    props.mode === "light"
+      ? `${colors.whisper_white}`
+      : `${colors.stormy_night}`};
   transition: all 0.5s;
   position: relative;
 `;

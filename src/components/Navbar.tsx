@@ -3,10 +3,13 @@ import { fontSizes, shadow } from "../config/style.config";
 import { colors } from "./../config/style.config";
 import { MenuIcon } from "./../assets/icons";
 import { Link } from "react-router-dom";
+import useMode from "./../zustand/useMode";
 
 const Navbar = () => {
+  const { mode } = useMode((state) => state);
+
   return (
-    <Nav>
+    <Nav mode={mode}>
       <Link to="/">Nuel Obeto</Link>
       <MenuIcon />
     </Nav>
@@ -15,7 +18,7 @@ const Navbar = () => {
 
 export default Navbar;
 
-const Nav = styled.nav`
+const Nav = styled.nav<any>`
   width: 100%;
   height: 8vh;
   display: flex;
@@ -26,13 +29,18 @@ const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: ${colors.stormy_night};
-  color: #fff;
+  background-color: ${(props) =>
+    props.mode === "light"
+      ? `${colors.whisper_white}`
+      : `${colors.stormy_night}`};
+  color: ${(props) =>
+    props.mode === "light" ? `${colors.midnight_blue}` : `${colors.white}`};
 
   a {
     font-size: ${fontSizes.lg};
     font-weight: 600;
-    color: #fff;
+    color: ${(props) =>
+      props.mode === "light" ? `${colors.midnight_blue}` : `${colors.white}`};
   }
 
   svg {
