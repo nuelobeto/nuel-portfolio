@@ -135,6 +135,7 @@ const Home = () => {
           <motion.h2
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               type: "spring",
               bounce: 0.4,
