@@ -13,6 +13,7 @@ import {
 import { SkillT } from "../types/types";
 import useMode from "./../zustand/useMode";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const skills: SkillT[] = [
   {
@@ -60,35 +61,113 @@ const Home = () => {
     <Dashboard>
       <HomeWrapper>
         <Box1 mode={mode}>
-          <h1>Hi, my name is</h1>
-          <h2>Obeto Emmanuel.</h2>
-          <h3>I build things for the web.</h3>
-          <p>
+          <motion.h1
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 1,
+            }}
+          >
+            Hi, my name is
+          </motion.h1>
+
+          <motion.h2
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+            }}
+          >
+            Obeto Emmanuel.
+          </motion.h2>
+
+          <motion.h3
+            initial={{ y: -50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            I build things for the web.
+          </motion.h3>
+
+          <motion.p
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5 }}
+          >
             I’m a software engineer specializing in building exceptional digital
             interfaces and experiences.
-          </p>
-          <div className="btns">
+          </motion.p>
+
+          <motion.div
+            initial={{ y: 50, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
+            transition={{
+              duration: 0.5,
+              delay: 0.5,
+            }}
+            className="btns"
+          >
             <Link to="/projects">
-              <button>Check out my works</button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                Check out my works
+              </motion.button>
             </Link>
-            <button>My Resume</button>
-          </div>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
+              My Resume
+            </motion.button>
+          </motion.div>
         </Box1>
+
         <Box2 mode={mode}>
-          <h2>My skills</h2>
-          <div
+          <motion.h2
+            initial={{ x: 50, opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            transition={{
+              type: "spring",
+              bounce: 0.4,
+              duration: 1,
+              delay: 0.2,
+            }}
+          >
+            My skills
+          </motion.h2>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             className={`skills ${mode === "light" ? "scroll-light" : "scroll"}`}
           >
             {skills.map((skill, index) => (
-              <Skill
+              <motion.div
                 key={index}
-                img={skill.img}
-                name={skill.name}
-                level={skill.level}
-                color={skill.color}
-              />
+                initial={{ x: 50, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{
+                  type: "spring",
+                  bounce: 0.4,
+                  stiffness: 400,
+                  damping: 10,
+                  duration: 1,
+                  delay: index * 0.2,
+                }}
+              >
+                <Skill
+                  img={skill.img}
+                  name={skill.name}
+                  level={skill.level}
+                  color={skill.color}
+                />
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </Box2>
       </HomeWrapper>
     </Dashboard>
@@ -169,13 +248,6 @@ const Box1 = styled.div<any>`
         props.mode === "light" ? `${colors.white}` : `${colors.midnight_blue}`};
       font-weight: 700;
       font-size: ${fontSizes.sm};
-
-      &:hover {
-        background-color: ${(props) =>
-          props.mode === "light"
-            ? `${colors.stormy_night}`
-            : `${colors.buttercream}`};
-      }
     }
   }
 `;
@@ -202,13 +274,14 @@ const Box2 = styled.div<any>`
     margin-bottom: 1rem;
   }
   .skills {
-    max-width: 450px;
-    max-height: 615px;
+    max-width: 455px;
+    max-height: 620px;
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
     overflow-y: auto;
+    overflow-x: hidden;
     padding: 5px 10px;
     @media (max-width: ${media.md}) {
       max-height: fit-content;

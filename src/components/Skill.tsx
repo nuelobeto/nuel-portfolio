@@ -2,17 +2,30 @@ import styled from "styled-components";
 import { SkillT } from "../types/types";
 import { colors, shadow } from "./../config/style.config";
 import useMode from "./../zustand/useMode";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const Skill = ({ img, name, level, color }: SkillT) => {
   const { mode } = useMode((state) => state);
+  const [progress, setProgress] = useState("0%");
+
+  useEffect(() => {
+    setProgress(level);
+  }, [level]);
 
   return (
-    <SkillWrapper color={color} level={level} mode={mode}>
+    <SkillWrapper color={color} level={progress} mode={mode}>
       <div className="skill">
         <img src={img} alt="" />
         <span>{name}</span>
       </div>
-      <div className="status-bar"></div>
+      <div className="status-bar">
+        <motion.div
+          className="bar"
+          animate={{ width: progress }}
+          transition={{ duration: 1, delay: 0.5 }}
+        ></motion.div>
+      </div>
     </SkillWrapper>
   );
 };
@@ -49,7 +62,7 @@ const SkillWrapper = styled.div<any>`
   .status-bar {
     box-shadow: 0 3px 10px rgb(0 0 0 / 0.2) inset;
     border-radius: 8px;
-    &::after {
+    .bar {
       display: block;
       content: "";
       width: ${(props) => props.level};
