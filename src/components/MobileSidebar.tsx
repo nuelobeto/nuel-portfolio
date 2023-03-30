@@ -118,6 +118,7 @@ const MobileSidebarWrapper = styled.div<any>`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 2;
   transition: all 0.5s;
   opacity: ${(props) => (props.show ? "1" : "0")};
   pointer-events: ${(props) => (props.show ? "all" : "none")};

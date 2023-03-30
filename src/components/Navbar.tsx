@@ -36,6 +36,7 @@ const Nav = styled.nav<any>`
   position: fixed;
   top: 0;
   left: 0;
+  z-index: 1;
   background-color: ${(props) =>
     props.mode === "light"
       ? `${colors.whisper_white}`

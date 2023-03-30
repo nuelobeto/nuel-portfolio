@@ -63,7 +63,8 @@ const Home = () => {
         <Box1 mode={mode}>
           <motion.h1
             initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.5,
               delay: 1,
@@ -74,7 +75,8 @@ const Home = () => {
 
           <motion.h2
             initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.5,
               delay: 0.5,
@@ -85,7 +87,8 @@ const Home = () => {
 
           <motion.h3
             initial={{ y: -50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             I build things for the web.
@@ -93,7 +96,8 @@ const Home = () => {
 
           <motion.p
             initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
             I’m a software engineer specializing in building exceptional digital
@@ -102,7 +106,8 @@ const Home = () => {
 
           <motion.div
             initial={{ y: 50, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
             transition={{
               duration: 0.5,
               delay: 0.5,
@@ -129,7 +134,7 @@ const Home = () => {
         <Box2 mode={mode}>
           <motion.h2
             initial={{ x: 50, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
+            whileInView={{ x: 0, opacity: 1 }}
             transition={{
               type: "spring",
               bounce: 0.4,
@@ -142,14 +147,16 @@ const Home = () => {
 
           <motion.div
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
             className={`skills ${mode === "light" ? "scroll-light" : "scroll"}`}
           >
             {skills.map((skill, index) => (
               <motion.div
                 key={index}
                 initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                whileInView={{ x: 0, opacity: 1 }}
+                viewport={{ once: true }}
                 transition={{
                   type: "spring",
                   bounce: 0.4,
