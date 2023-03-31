@@ -125,7 +125,7 @@ const MobileSidebarWrapper = styled.div<any>`
 `;
 
 const Sidebar = styled.div<any>`
-  width: 300px;
+  width: 250px;
   height: 100vh;
   background-color: ${colors.midnight_blue};
   padding: 2rem 1rem;
