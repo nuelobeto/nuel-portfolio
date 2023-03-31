@@ -176,7 +176,7 @@ const AboutWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 3rem 10px;
+  padding: 3rem 3px;
   overflow: auto;
   @media (max-width: ${media.xl}) {
     height: auto;
