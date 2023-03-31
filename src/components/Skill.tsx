@@ -24,7 +24,7 @@ const Skill = ({ img, name, level, color }: SkillT) => {
           className="bar"
           animate={{ width: progress }}
           viewport={{ once: true }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 1, delay: 2 }}
         ></motion.div>
       </div>
     </SkillWrapper>
