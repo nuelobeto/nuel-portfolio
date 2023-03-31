@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import Dashboard from "./../components/Dashboard";
-import { colors, fontSizes, shadow } from "./../config/style.config";
+import { colors, fontSizes, media, shadow } from "./../config/style.config";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useMode from "./../zustand/useMode";
@@ -113,7 +113,9 @@ const About = () => {
         >
           <h2>Where I've worked</h2>
           <div>
-            <div className="nav">
+            <div
+              className={`nav ${mode === "light" ? "scroll-light" : "scroll"}`}
+            >
               {nav.map((item, index) => (
                 <span
                   key={index}
@@ -174,14 +176,16 @@ const AboutWrapper = styled.div<any>`
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 3rem 0;
+  padding: 3rem 10px;
   overflow: auto;
+  @media (max-width: ${media.xl}) {
+    height: auto;
+  }
 
   .about {
     max-width: 900px;
     width: 100%;
     padding: 2rem;
-    /* border: 3px solid ${colors.forest_stone}; */
     border-radius: 8px;
     margin: 0 auto;
     box-shadow: ${shadow.base};
@@ -189,12 +193,18 @@ const AboutWrapper = styled.div<any>`
       props.mode === "light"
         ? `${colors.breezy_blue}`
         : `${colors.forest_stone}`};
+    @media (max-width: ${media.sm}) {
+      padding: 2rem 1rem;
+    }
 
     h2 {
       color: ${(props) =>
         props.mode === "light"
           ? `${colors.midnight_blue}`
           : `${colors.pearl_mist}`};
+      @media (max-width: ${media.sm}) {
+        text-align: center;
+      }
     }
 
     p {
@@ -217,9 +227,21 @@ const AboutWrapper = styled.div<any>`
     flex-direction: column;
     gap: 1rem;
 
+    @media (max-width: ${media.sm}) {
+      text-align: center;
+    }
+
     & > div {
       display: flex;
       gap: 2rem;
+
+      @media (max-width: ${media.md}) {
+        flex-direction: column-reverse;
+        gap: 1rem;
+      }
+      @media (max-width: ${media.sm}) {
+        align-items: center;
+      }
     }
 
     .text {
@@ -237,6 +259,11 @@ const AboutWrapper = styled.div<any>`
         props.mode === "light"
           ? `${colors.midnight_blue}`
           : `${colors.moonstone}`};
+      @media (max-width: ${media.md}) {
+        width: 200px;
+        height: 200px;
+      }
+
       /* img {
         width: 100%;
         aspect-ratio: 1/1;
@@ -253,12 +280,24 @@ const AboutWrapper = styled.div<any>`
     & > div {
       display: flex;
       gap: 3rem;
+      @media (max-width: ${media.md}) {
+        gap: 1.5rem;
+      }
+      @media (max-width: ${media.sm}) {
+        flex-direction: column;
+      }
     }
 
     .nav {
       width: fit-content;
       display: flex;
       flex-direction: column;
+      @media (max-width: ${media.sm}) {
+        flex-direction: row;
+        width: 100%;
+        padding-bottom: 5px;
+        overflow-x: auto;
+      }
 
       span {
         padding: 0.75rem;
@@ -272,6 +311,14 @@ const AboutWrapper = styled.div<any>`
             : `${colors.moonstone}`};
         font-size: ${fontSizes.sm};
         cursor: pointer;
+        @media (max-width: ${media.sm}) {
+          border-left: none;
+          border-bottom: ${(props) =>
+            props.mode === "light"
+              ? `2px solid ${colors.slate_grey}`
+              : `2px solid ${colors.stormy_night}`};
+        }
+
         &.active-nav {
           border-left: ${(props) =>
             props.mode === "light"
@@ -285,7 +332,15 @@ const AboutWrapper = styled.div<any>`
             props.mode === "light"
               ? `${colors.midnight_blue}`
               : `${colors.golden_sun}`};
+          @media (max-width: ${media.sm}) {
+            border-left: none;
+            border-bottom: ${(props) =>
+              props.mode === "light"
+                ? `2px solid ${colors.forest_stone}`
+                : `2px solid ${colors.golden_sun}`};
+          }
         }
+
         &:hover {
           color: ${(props) =>
             props.mode === "light"
