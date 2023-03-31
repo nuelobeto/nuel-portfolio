@@ -10,6 +10,8 @@ export const colors = {
   forest_stone: "#303438",
   whisper_white: "#fdfdfd",
   breezy_blue: "#f9fafb",
+  slate_grey: "#bdbdbd",
+  sky_blue: "#48beec",
 };
 
 export const fontSizes = {
