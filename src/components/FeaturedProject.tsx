@@ -10,8 +10,8 @@ const FeaturedProject = () => {
   return (
     <ProjectWrapper
       mode={mode}
-      initial={{ y: 200, opacity: 0 }}
-      whileInView={{ y: 0, opacity: 1 }}
+      initial={{ x: 100, opacity: 0 }}
+      whileInView={{ x: 0, opacity: 1 }}
       viewport={{ once: true }}
       transition={{
         type: "spring",
