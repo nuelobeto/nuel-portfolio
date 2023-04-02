@@ -13,7 +13,7 @@ import {
   MdClose,
 } from "react-icons/md";
 import { BsTwitter } from "react-icons/bs";
-import { BiMenuAltRight } from "react-icons/bi";
+import { BiMenuAltRight, BiInfoCircle } from "react-icons/bi";
 import { FiExternalLink } from "react-icons/fi";
 
 export const HomeIcon = AiFillHome;
@@ -29,3 +29,4 @@ export const TwitterIcon = BsTwitter;
 export const MenuIcon = BiMenuAltRight;
 export const CloseIcon = MdClose;
 export const ExternalLinkIcon = FiExternalLink;
+export const InfoIcon = BiInfoCircle;

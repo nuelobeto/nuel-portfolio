@@ -18,7 +18,22 @@ const OtherProject = () => {
         bounce: 0.4,
         duration: 0.8,
       }}
-    ></ProjectWrapper>
+    >
+      <div className="links">
+        <GithubIcon />
+        <ExternalLinkIcon />
+      </div>
+      <h3>Lorem ipsum dolor</h3>
+      <div className="desc">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam provident
+        maxime asperiores? Ipsam tempore at ex iste a facilis consectetur.
+      </div>
+      <div className="tags">
+        <span>React</span>
+        <span>Node</span>
+        <span>MongoDB</span>
+      </div>
+    </ProjectWrapper>
   );
 };
 
@@ -27,9 +42,61 @@ export default OtherProject;
 const ProjectWrapper = styled(motion.div)<any>`
   border-radius: 8px;
   overflow: hidden;
-  aspect-ratio: 1/1;
+  padding: 1.5rem;
   box-shadow: ${shadow.base2};
   background-color: ${(props) =>
     props.mode === "light" ? `${colors.frosty_ash}` : `${colors.forest_stone}`};
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   position: relative;
+
+  .links {
+    font-size: 25px;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.deep_blue_wave}`
+        : `${colors.buttercream}`};
+    margin-bottom: 1rem;
+
+    svg {
+      cursor: pointer;
+    }
+  }
+
+  h3 {
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.stormy_night}`
+        : `${colors.pearl_mist}`};
+    cursor: pointer;
+  }
+
+  .desc {
+    margin-bottom: 3rem;
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.stormy_night}`
+        : `${colors.slate_grey}`};
+  }
+
+  .tags {
+    width: 100%;
+    padding: 1.5rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: ${fontSizes.sm};
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.deep_blue_wave}`
+        : `${colors.buttercream}`};
+    font-weight: 500;
+  }
 `;
