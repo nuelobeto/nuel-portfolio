@@ -147,7 +147,7 @@ const About = () => {
 
         <motion.div
           className="skills about"
-          initial={{ x: 200, opacity: 0 }}
+          initial={{ x: -200, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           viewport={{ once: true }}
           transition={{

@@ -12,6 +12,7 @@ export const colors = {
   breezy_blue: "#f9fafb",
   slate_grey: "#bdbdbd",
   sky_blue: "#48beec",
+  deep_blue_wave: "#23779b",
 };
 
 export const fontSizes = {
@@ -30,6 +31,8 @@ export const fontSizes = {
 
 export const shadow = {
   base: "0 3px 8px rgb(0 0 0 / 0.2)",
+  base2: "0 3px 8px rgb(0 0 0 / 0.3)",
+  base3: "0 3px 8px rgb(0 0 0 / 0.4)",
 };
 
 export const media = {
