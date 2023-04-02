@@ -13,6 +13,7 @@ export const colors = {
   slate_grey: "#bdbdbd",
   sky_blue: "#48beec",
   deep_blue_wave: "#23779b",
+  frosty_ash: "#e4e4e4",
 };
 
 export const fontSizes = {

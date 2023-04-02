@@ -22,7 +22,7 @@ const FeaturedProject = () => {
       <img src="/images/project.PNG" alt="" />
 
       <div className="details">
-        <h2>Lorem ipsum dolor</h2>
+        <h3>Lorem ipsum dolor</h3>
         <div className="desc">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur,
           asperiores dicta perspiciatis assumenda saepe unde et. Autem tenetur
@@ -40,7 +40,7 @@ const FeaturedProject = () => {
       </div>
 
       <div className="mobile-details">
-        <h2>Lorem ipsum dolor</h2>
+        <h3>Lorem ipsum dolor</h3>
         <div className="tags">
           <span>React</span>
           <span>Node</span>
@@ -60,9 +60,7 @@ export default FeaturedProject;
 const ProjectWrapper = styled(motion.div)<any>`
   display: flex;
   align-items: center;
-  max-width: 950px;
   width: 98%;
-  margin: auto;
   border-radius: 8px;
   overflow: hidden;
   position: relative;
@@ -93,7 +91,7 @@ const ProjectWrapper = styled(motion.div)<any>`
     }
   }
 
-  h2 {
+  h3 {
     color: ${(props) =>
       props.mode === "light"
         ? `${colors.deep_blue_wave}`
@@ -171,7 +169,7 @@ const ProjectWrapper = styled(motion.div)<any>`
       display: flex;
     }
 
-    h2 {
+    h3 {
       font-size: ${fontSizes.md};
       color: ${(props) =>
         props.mode === "light"

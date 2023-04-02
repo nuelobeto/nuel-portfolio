@@ -1,19 +1,32 @@
 import styled from "styled-components";
-import { media } from "../config/style.config";
+import { colors, media } from "../config/style.config";
 import Dashboard from "./../components/Dashboard";
 import FeaturedProject from "./../components/FeaturedProject";
 import { motion } from "framer-motion";
+import useMode from "../zustand/useMode";
+import OtherProject from "../components/OtherProject";
 
 const Projects = () => {
+  const { mode } = useMode((state) => state);
   const featuredProjects = [1, 2, 3];
+  const otherProjects = [1, 2, 3, 4, 5, 6];
+
   return (
     <Dashboard>
-      <ProjectsWrapper className="hide-scroll">
-        <motion.div className="featured-projects">
+      <ProjectsWrapper mode={mode} className="hide-scroll">
+        <h2>Featured Projects</h2>
+        <div className="featured-projects">
           {featuredProjects.map((project, index) => (
             <FeaturedProject key={index} />
           ))}
-        </motion.div>
+        </div>
+
+        <h2>Other Projects</h2>
+        <div className="other-projects">
+          {otherProjects.map((project, index) => (
+            <OtherProject key={index} />
+          ))}
+        </div>
       </ProjectsWrapper>
     </Dashboard>
   );
@@ -21,10 +34,24 @@ const Projects = () => {
 
 export default Projects;
 
-const ProjectsWrapper = styled.div`
+const ProjectsWrapper = styled.div<any>`
+  max-width: 950px;
+  width: 100%;
   height: 100vh;
   padding: 3rem 0;
+  margin: auto;
   overflow: auto;
+
+  & > h2 {
+    margin-bottom: 2rem;
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.midnight_blue}`
+        : `${colors.pearl_mist}`};
+    @media (max-width: 600px) {
+      text-align: center;
+    }
+  }
 
   @media (max-width: ${media.xl}) {
     height: auto;
@@ -34,8 +61,26 @@ const ProjectsWrapper = styled.div`
     display: flex;
     flex-direction: column;
     gap: 5rem;
+    margin-bottom: 4rem;
     @media (max-width: 600px) {
       gap: 1.5rem;
+    }
+  }
+
+  .other-projects {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    padding: 5px;
+    @media (max-width: ${media.md}) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 5px 3rem;
+    }
+    @media (max-width: ${media.sm}) {
+      padding: 5px;
     }
   }
 `;
