@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { colors, media } from "../config/style.config";
 import Dashboard from "./../components/Dashboard";
 import FeaturedProject from "./../components/FeaturedProject";
-import { motion } from "framer-motion";
 import useMode from "../zustand/useMode";
 import OtherProject from "../components/OtherProject";
 
@@ -41,6 +40,10 @@ const ProjectsWrapper = styled.div<any>`
   padding: 3rem 0;
   margin: auto;
   overflow: auto;
+  @media (max-width: ${media.xl}) {
+    height: auto;
+    overflow: hidden;
+  }
 
   & > h2 {
     margin-bottom: 2rem;
@@ -51,10 +54,6 @@ const ProjectsWrapper = styled.div<any>`
     @media (max-width: 600px) {
       text-align: center;
     }
-  }
-
-  @media (max-width: ${media.xl}) {
-    height: auto;
   }
 
   .featured-projects {

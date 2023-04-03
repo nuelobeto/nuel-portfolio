@@ -41,7 +41,6 @@ export default OtherProject;
 
 const ProjectWrapper = styled(motion.div)<any>`
   border-radius: 8px;
-  overflow: hidden;
   padding: 1.5rem;
   box-shadow: ${shadow.base2};
   background-color: ${(props) =>
@@ -50,6 +49,7 @@ const ProjectWrapper = styled(motion.div)<any>`
   flex-direction: column;
   gap: 0.75rem;
   position: relative;
+  cursor: pointer;
 
   .links {
     font-size: 25px;

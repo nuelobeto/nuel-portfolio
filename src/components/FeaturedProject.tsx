@@ -63,7 +63,6 @@ const ProjectWrapper = styled(motion.div)<any>`
   width: 98%;
   margin: auto;
   border-radius: 8px;
-  overflow: hidden;
   position: relative;
   @media (max-width: 600px) {
     flex-direction: column;

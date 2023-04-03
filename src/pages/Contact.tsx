@@ -4,6 +4,7 @@ import { fontSizes, media } from "../config/style.config";
 import useMode from "../zustand/useMode";
 import Dashboard from "./../components/Dashboard";
 import { colors } from "./../config/style.config";
+import { motion } from "framer-motion";
 
 const Contact = () => {
   const { mode } = useMode((state) => state);
@@ -12,26 +13,56 @@ const Contact = () => {
     <Dashboard>
       <ContactWrapper mode={mode}>
         <div className="box">
-          <div className="intro">
+          <motion.div
+            className="intro"
+            initial={{ y: -50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
             <h2>Get in touch</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
               reprehenderit laborum eos accusantium assumenda beatae dicta
               voluptates quos eum tempore.
             </p>
-          </div>
+          </motion.div>
 
-          <div className="links">
-            <button>
+          <motion.div
+            className="links"
+            initial={{ y: 50, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <EmailIcon /> <span>nuelobet@gmail.com</span>
-            </button>
-            <button>
+            </motion.button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               <LinkedInIcon /> <span>LinkedIn</span>
-            </button>
-          </div>
+            </motion.button>
+          </motion.div>
         </div>
 
-        <div className="form">
+        <motion.div
+          className="form"
+          initial={{ x: 100, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{
+            type: "spring",
+            bounce: 0.4,
+            stiffness: 400,
+            damping: 10,
+            duration: 0.8,
+          }}
+        >
           <div className="form-group">
             <label>Name</label>
             <input type="text" />
@@ -55,11 +86,14 @@ const Contact = () => {
           </div>
 
           <div className="submit-btn">
-            <button>
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            >
               Send Message <SendIcon />
-            </button>
+            </motion.button>
           </div>
-        </div>
+        </motion.div>
       </ContactWrapper>
     </Dashboard>
   );
@@ -75,7 +109,7 @@ const ContactWrapper = styled.div<any>`
   padding: 3rem 0;
   display: flex;
   gap: 2rem;
-  overflow: auto;
+  /* overflow-y: auto; */
 
   @media (max-width: ${media.xl}) {
     height: auto;
