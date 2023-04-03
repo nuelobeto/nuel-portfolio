@@ -39,7 +39,7 @@ const Contact = () => {
               whileHover={{ scale: 1.1 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
-              <EmailIcon /> <span>nuelobet@gmail.com</span>
+              <EmailIcon /> <span>nuelobeto@gmail.com</span>
             </motion.button>
             <motion.button
               whileHover={{ scale: 1.1 }}
