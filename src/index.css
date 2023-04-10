@@ -29,6 +29,13 @@ img {
   display: block;
 }
 
+.container {
+  max-width: 1500px;
+  width: 100%;
+  margin: auto;
+  padding: 0 1rem;
+}
+
 .scroll::-webkit-scrollbar {
   width: 5px;
   height: 5px;

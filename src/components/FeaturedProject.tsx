@@ -3,8 +3,13 @@ import useMode from "./../zustand/useMode";
 import { colors, fontSizes, shadow } from "./../config/style.config";
 import { motion } from "framer-motion";
 import { ExternalLinkIcon, GithubIcon } from "../assets/icons";
+import { SavedProjectT } from "../types/types";
 
-const FeaturedProject = () => {
+type PropsT = {
+  project: SavedProjectT;
+};
+
+const FeaturedProject = ({ project }: PropsT) => {
   const { mode } = useMode((state) => state);
 
   return (
@@ -19,23 +24,23 @@ const FeaturedProject = () => {
         duration: 0.8,
       }}
     >
-      <img src="/images/project.PNG" alt="" />
+      <img src={project.image} alt="" />
 
       <div className="details">
-        <h3>Lorem ipsum dolor</h3>
-        <div className="desc">
-          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur,
-          asperiores dicta perspiciatis assumenda saepe unde et. Autem tenetur
-          sed natus?
-        </div>
+        <h3>{project.title}</h3>
+        <div className="desc">{project.description}</div>
         <div className="tags">
-          <span>React</span>
-          <span>Node</span>
-          <span>MongoDB</span>
+          {project.tags.split(", ").map((tag, index) => (
+            <span key={index}>{tag}</span>
+          ))}
         </div>
         <div className="links">
-          <GithubIcon />
-          <ExternalLinkIcon />
+          <a href={project.github}>
+            <GithubIcon />
+          </a>
+          <a href={project.website}>
+            <ExternalLinkIcon />
+          </a>
         </div>
       </div>
 
@@ -121,9 +126,15 @@ const ProjectWrapper = styled(motion.div)<any>`
         ? `${colors.deep_blue_wave}`
         : `${colors.buttercream}`};
 
-    svg {
-      pointer-events: all;
-      cursor: pointer;
+    a {
+      svg {
+        pointer-events: all;
+        cursor: pointer;
+        color: ${(props) =>
+          props.mode === "light"
+            ? `${colors.deep_blue_wave}`
+            : `${colors.buttercream}`};
+      }
     }
   }
 

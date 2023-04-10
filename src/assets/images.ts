@@ -5,3 +5,4 @@ export const NODE_IMG = "/images/node.png";
 export const SOLIDITY_IMG = "/images/solidity.png";
 export const ETHERS_IMG = "/images/ethers.png";
 export const PYTHON_IMG = "/images/python.png";
+export const ADD_IMAGE = "/images/add-image.png";

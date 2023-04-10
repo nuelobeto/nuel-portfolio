@@ -4,11 +4,17 @@ import Dashboard from "./../components/Dashboard";
 import FeaturedProject from "./../components/FeaturedProject";
 import useMode from "../zustand/useMode";
 import OtherProject from "../components/OtherProject";
+import useProject from "../zustand/useProject";
 
 const Projects = () => {
   const { mode } = useMode((state) => state);
-  const featuredProjects = [1, 2, 3];
-  const otherProjects = [1, 2, 3, 4, 5, 6];
+  const { projects } = useProject((state) => state);
+  const featuredProjects = projects.filter(
+    (project) => project.category === "featured"
+  );
+  const otherProjects = projects.filter(
+    (project) => project.category === "other"
+  );
 
   return (
     <Dashboard>
@@ -16,7 +22,7 @@ const Projects = () => {
         <h2>Featured Projects</h2>
         <div className="featured-projects">
           {featuredProjects.map((project, index) => (
-            <FeaturedProject key={index} />
+            <FeaturedProject key={index} project={project} />
           ))}
         </div>
 

@@ -1,9 +1,5 @@
 import { create } from "zustand";
-
-type ModeT = {
-  mode: string;
-  setMode: (mode: string) => void;
-};
+import { ModeT } from "../types/types";
 
 const savedMode: string | null = localStorage.getItem("mode");
 const parsedMode: string | undefined = savedMode
