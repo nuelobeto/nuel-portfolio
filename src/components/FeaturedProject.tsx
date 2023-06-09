@@ -103,39 +103,6 @@ const ProjectWrapper = styled(motion.div)<any>`
         : `${colors.pearl_mist}`};
   }
 
-  .tags {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: ${fontSizes.sm};
-    color: ${(props) =>
-      props.mode === "light"
-        ? `${colors.deep_blue_wave}`
-        : `${colors.buttercream}`};
-    font-weight: 600;
-  }
-
-  .links {
-    font-size: 25px;
-    display: flex;
-    gap: 1rem;
-    color: ${(props) =>
-      props.mode === "light"
-        ? `${colors.deep_blue_wave}`
-        : `${colors.buttercream}`};
-
-    a {
-      svg {
-        pointer-events: all;
-        cursor: pointer;
-        color: ${(props) =>
-          props.mode === "light"
-            ? `${colors.deep_blue_wave}`
-            : `${colors.buttercream}`};
-      }
-    }
-  }
-
   .details {
     position: absolute;
     height: 100%;
@@ -164,6 +131,37 @@ const ProjectWrapper = styled(motion.div)<any>`
           ? `${colors.breezy_blue}`
           : `${colors.forest_stone}`};
       font-size: ${fontSizes.sm};
+    }
+  }
+
+  .tags {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: ${fontSizes.sm};
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.deep_blue_wave}`
+        : `${colors.buttercream}`};
+    font-weight: 600;
+  }
+
+  .links {
+    font-size: 25px;
+    display: flex;
+    gap: 1rem;
+    color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.deep_blue_wave}`
+        : `${colors.buttercream}`};
+
+    a {
+      svg {
+        color: ${(props) =>
+          props.mode === "light"
+            ? `${colors.deep_blue_wave}`
+            : `${colors.buttercream}`};
+      }
     }
   }
 
