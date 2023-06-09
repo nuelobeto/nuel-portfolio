@@ -20,7 +20,7 @@ const Footer = () => {
           <LinkedInIcon />
         </a>
       </FooterSocials>
-      <p>Built with React TS and Node</p>
+      <p>Built with React TypeScript</p>
     </FooterWrapper>
   );
 };

@@ -22,9 +22,10 @@ const Contact = () => {
           >
             <h2>Get in touch</h2>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis
-              reprehenderit laborum eos accusantium assumenda beatae dicta
-              voluptates quos eum tempore.
+              It's always exciting to make new connections, share ideas and to
+              collaborate! Whether you have a specific inquiry or just want to
+              say hello, I'll make sure to respond promptly. Let's connect and
+              create something exceptional!
             </p>
           </motion.div>
 
@@ -35,22 +36,30 @@ const Contact = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            <a href="mailto:nuelobeto@gmail.com">
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <EmailIcon /> <span>nuelobeto@gmail.com</span>
+              </motion.button>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/nuel-obeto/"
+              target="_blank"
+              rel="noreferrer"
             >
-              <EmailIcon /> <span>nuelobeto@gmail.com</span>
-            </motion.button>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
-            >
-              <LinkedInIcon /> <span>LinkedIn</span>
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                <LinkedInIcon /> <span>LinkedIn</span>
+              </motion.button>
+            </a>
           </motion.div>
         </div>
 
-        <motion.div
+        {/* <motion.div
           className="form"
           initial={{ x: 100, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
@@ -93,7 +102,7 @@ const Contact = () => {
               Send Message <SendIcon />
             </motion.button>
           </div>
-        </motion.div>
+        </motion.div> */}
       </ContactWrapper>
     </Dashboard>
   );
@@ -105,15 +114,17 @@ const ContactWrapper = styled.div<any>`
   max-width: 1000px;
   width: 100%;
   margin: auto;
-  height: 100vh;
-  padding: 3rem 0;
+  /* height: 100vh; */
+  height: calc(100vh - 95px - 3rem);
+  padding: 3rem 0 0;
   display: flex;
   gap: 2rem;
   /* overflow-y: auto; */
 
-  @media (max-width: ${media.xl}) {
+  /* @media (max-width: ${media.xl}) {
     height: auto;
-  }
+  } */
+
   @media (max-width: ${media.md}) {
     flex-direction: column;
     gap: 4rem;
@@ -133,10 +144,17 @@ const ContactWrapper = styled.div<any>`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 4rem;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (max-width: ${media.xl}) {
+      justify-content: flex-start;
+    }
 
     .intro {
       h2 {
+        font-size: ${fontSizes["4xl"]};
+        text-align: center;
         margin-bottom: 2rem;
         color: ${(props) =>
           props.mode === "light"
@@ -148,8 +166,11 @@ const ContactWrapper = styled.div<any>`
       }
 
       p {
+        max-width: 700px;
+        font-size: ${fontSizes.md};
+        margin: auto;
+        text-align: center;
         line-height: 1.5;
-        font-size: ${fontSizes.base};
         color: ${(props) =>
           props.mode === "light"
             ? `${colors.stormy_night}`

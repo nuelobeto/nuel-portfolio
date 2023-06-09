@@ -46,6 +46,7 @@ const FeaturedProject = ({ project }: PropsT) => {
 
       <div className="mobile-details">
         <h3>Lorem ipsum dolor</h3>
+        <div className="desc">{project.description}</div>
         <div className="tags">
           <span>React</span>
           <span>Node</span>
@@ -89,7 +90,6 @@ const ProjectWrapper = styled(motion.div)<any>`
     width: 60%;
     border-radius: 8px;
     filter: brightness(40%);
-    cursor: pointer;
     @media (max-width: 600px) {
       width: 100%;
       min-width: auto;
@@ -101,8 +101,6 @@ const ProjectWrapper = styled(motion.div)<any>`
       props.mode === "light"
         ? `${colors.deep_blue_wave}`
         : `${colors.pearl_mist}`};
-    pointer-events: all;
-    cursor: pointer;
   }
 
   .tags {
@@ -114,7 +112,7 @@ const ProjectWrapper = styled(motion.div)<any>`
       props.mode === "light"
         ? `${colors.deep_blue_wave}`
         : `${colors.buttercream}`};
-    font-weight: 500;
+    font-weight: 600;
   }
 
   .links {
@@ -148,7 +146,6 @@ const ProjectWrapper = styled(motion.div)<any>`
     gap: 1rem;
     right: 0;
     padding: 0 5px;
-    pointer-events: none;
     color: ${(props) =>
       props.mode === "light"
         ? `${colors.stormy_night}`
@@ -166,7 +163,7 @@ const ProjectWrapper = styled(motion.div)<any>`
         props.mode === "light"
           ? `${colors.breezy_blue}`
           : `${colors.forest_stone}`};
-      pointer-events: all;
+      font-size: ${fontSizes.sm};
     }
   }
 
@@ -176,6 +173,15 @@ const ProjectWrapper = styled(motion.div)<any>`
     flex-direction: column;
     gap: 0.5rem;
     padding: 1rem 0 0;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: ${shadow.base2};
+    background-color: ${(props) =>
+      props.mode === "light"
+        ? `${colors.breezy_blue}`
+        : `${colors.forest_stone}`};
+    margin-top: 6px;
+
     @media (max-width: 600px) {
       display: flex;
     }
@@ -186,6 +192,14 @@ const ProjectWrapper = styled(motion.div)<any>`
         props.mode === "light"
           ? `${colors.stormy_night}`
           : `${colors.pearl_mist}`};
+    }
+
+    .desc {
+      color: ${(props) =>
+        props.mode === "light"
+          ? `${colors.stormy_night}`
+          : `${colors.slate_grey}`};
+      font-size: ${fontSizes.sm};
     }
   }
 `;

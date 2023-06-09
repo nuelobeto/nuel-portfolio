@@ -39,11 +39,11 @@ const links = [
     url: "/contact",
     icon: <ContactIcon />,
   },
-  {
-    name: "Blog",
-    url: "/blog",
-    icon: <BlogIcon />,
-  },
+  // {
+  //   name: "Blog",
+  //   url: "/blog",
+  //   icon: <BlogIcon />,
+  // },
 ];
 
 type PropsT = {

@@ -26,7 +26,7 @@ const Projects = () => {
           ))}
         </div>
 
-        <h2>Other Projects</h2>
+        {otherProjects.length !== 0 && <h2>Other Projects</h2>}
         <div className="other-projects">
           {otherProjects.map((project, index) => (
             <OtherProject key={index} />
@@ -68,7 +68,7 @@ const ProjectsWrapper = styled.div<any>`
     gap: 5rem;
     margin-bottom: 4rem;
     @media (max-width: 600px) {
-      gap: 1.5rem;
+      gap: 3rem;
     }
   }
 

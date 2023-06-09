@@ -81,6 +81,7 @@ const ProjectWrapper = styled(motion.div)<any>`
       props.mode === "light"
         ? `${colors.stormy_night}`
         : `${colors.slate_grey}`};
+    font-size: ${fontSizes.sm};
   }
 
   .tags {
@@ -97,6 +98,6 @@ const ProjectWrapper = styled(motion.div)<any>`
       props.mode === "light"
         ? `${colors.deep_blue_wave}`
         : `${colors.buttercream}`};
-    font-weight: 500;
+    font-weight: 600;
   }
 `;

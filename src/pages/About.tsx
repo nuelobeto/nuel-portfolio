@@ -7,19 +7,18 @@ import useMode from "./../zustand/useMode";
 
 const experience = [
   {
-    company: "Web3Ladies",
+    company: "FlowOps",
     position: "Front End Developer",
-    date: "July 2022",
+    date: "September 2022 - Present",
     roles: [
-      "Write modern, performant, maintainable code",
-      "Worked with a team of web3 developers to create an LMS with up-to-date web3 tools and resources.",
+      "Designed the user interface for a service monitoring SaaS, focusing on creating a user-friendly and visually appealing experience.",
     ],
-    url: "https://www.web3ladies.com/",
+    url: "https://www.flowops.xyz/",
   },
   {
     company: "StatementAI",
     position: "Front End Developer",
-    date: "December 2022",
+    date: "September 2022 - December 2022",
     roles: [
       "Developed and shipped a user interface featuring a multifaceted and dynamic text editor with advanced interactivity.",
       "Maintenance of code, debugging issues and solving clients’ problems.",
@@ -27,13 +26,14 @@ const experience = [
     url: "https://statementai.io/",
   },
   {
-    company: "FlowOps",
+    company: "Web3Ladies",
     position: "Front End Developer",
-    date: "August 2022 - Present",
+    date: "August 2020 - September 2022",
     roles: [
-      "Developed and maintained code for a client dashboard for a Saas product.",
+      "Write modern, performant, maintainable code",
+      "Worked with a team of web3 developers to create an LMS with up-to-date web3 tools and resources.",
     ],
-    url: "https://www.flowops.xyz/",
+    url: "https://www.web3ladies.com/",
   },
 ];
 
@@ -51,9 +51,7 @@ const About = () => {
     "Solidity",
     "Python",
     "Firebase",
-    "Sanity",
     "MongoDB",
-    "Ganache",
   ];
 
   const handleActive = (company: string) => {

@@ -1,9 +1,10 @@
 import { create } from "zustand";
 import { ProjectsT } from "../types/types";
 import projectAPI from "./../services/projectAPI";
+import { projectsData } from "./../data/projectsData";
 
 const useProject = create<ProjectsT>((set) => ({
-  projects: [],
+  projects: projectsData,
   getProjects: async () => {
     try {
       const res = await projectAPI.getProjects();

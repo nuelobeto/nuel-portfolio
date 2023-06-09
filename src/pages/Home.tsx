@@ -122,12 +122,18 @@ const Home = () => {
                 Check out my works
               </motion.button>
             </Link>
-            <motion.button
-              whileHover={{ scale: 1.1 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+            <a
+              href="https://drive.google.com/file/d/1pCRi8ehw-f2nHP3dfy4y6LvCV8SwZruI/view?usp=sharing"
+              target="_blank"
+              rel="noreferrer"
             >
-              My Resume
-            </motion.button>
+              <motion.button
+                whileHover={{ scale: 1.1 }}
+                transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              >
+                My Resume
+              </motion.button>
+            </a>
           </motion.div>
         </Box1>
 
@@ -191,6 +197,7 @@ const HomeWrapper = styled.div`
   justify-content: center;
   @media (max-width: ${media.xl}) {
     height: 92vh;
+    padding: 4rem 0;
   }
   @media (max-width: ${media.md}) {
     flex-direction: column;
@@ -209,6 +216,9 @@ const Box1 = styled.div<any>`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  @media (max-width: ${media.xl}) {
+    justify-content: flex-start;
+  }
   @media (max-width: ${media.md}) {
     width: 100%;
     margin-bottom: 2rem;
@@ -217,10 +227,12 @@ const Box1 = styled.div<any>`
   }
   h1 {
     font-size: ${fontSizes.md};
+    line-height: 2;
   }
   h2,
   h3 {
     font-size: clamp(${fontSizes["2xl"]}, 4vw, ${fontSizes["6xl"]});
+    line-height: 1.2;
   }
   p {
     max-width: 90%;
@@ -268,6 +280,10 @@ const Box2 = styled.div<any>`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: ${media.xl}) {
+    justify-content: flex-start;
+  }
 
   @media (max-width: ${media.md}) {
     width: 100%;
