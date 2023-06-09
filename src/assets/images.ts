@@ -1,4 +1,5 @@
-export const TECHGUY_IMG = "/images/techguy.png";
+export const TECHGUY_IMG =
+  "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686348676/portfolio/images_uewo3l.png";
 export const REACT_IMG = "/images/react.png";
 export const JAVASCRIPT_IMG = "/images/javascript.png";
 export const NODE_IMG = "/images/node.png";
