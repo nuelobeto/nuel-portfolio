@@ -24,7 +24,9 @@ const FeaturedProject = ({ project }: PropsT) => {
         duration: 0.8,
       }}
     >
-      <img src={project.image} alt="" />
+      <a href={project.website} className="project-image">
+        <img src={project.image} alt="" />
+      </a>
 
       <div className="details">
         <h3>{project.title}</h3>
@@ -85,11 +87,15 @@ const ProjectWrapper = styled(motion.div)<any>`
     }
   }
 
-  img {
+  .project-image {
+    display: block;
     min-width: 450px;
     width: 60%;
-    border-radius: 8px;
-    filter: brightness(40%);
+    img {
+      width: 100%;
+      border-radius: 8px;
+      filter: brightness(40%);
+    }
     @media (max-width: 600px) {
       width: 100%;
       min-width: auto;
@@ -105,6 +111,7 @@ const ProjectWrapper = styled(motion.div)<any>`
 
   .details {
     position: absolute;
+    width: fit-content;
     height: 100%;
     display: flex;
     flex-direction: column;
