@@ -29,7 +29,7 @@ const Projects = () => {
         {otherProjects.length !== 0 && <h2>Other Projects</h2>}
         <div className="other-projects">
           {otherProjects.map((project, index) => (
-            <OtherProject key={index} />
+            <OtherProject key={index} project={project} />
           ))}
         </div>
       </ProjectsWrapper>

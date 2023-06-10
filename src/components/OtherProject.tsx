@@ -3,8 +3,13 @@ import { motion } from "framer-motion";
 import { colors, fontSizes, shadow } from "../config/style.config";
 import useMode from "../zustand/useMode";
 import { ExternalLinkIcon, GithubIcon } from "../assets/icons";
+import { SavedProjectT } from "../types/types";
 
-const OtherProject = () => {
+type PropsT = {
+  project: SavedProjectT;
+};
+
+const OtherProject = ({ project }: PropsT) => {
   const { mode } = useMode((state) => state);
 
   return (
@@ -20,18 +25,19 @@ const OtherProject = () => {
       }}
     >
       <div className="links">
-        <GithubIcon />
-        <ExternalLinkIcon />
+        <a href={project.github} target="_blank" rel="noreferrer">
+          <GithubIcon />
+        </a>
+        <a href={project.website} target="_blank" rel="noreferrer">
+          <ExternalLinkIcon />
+        </a>
       </div>
-      <h3>Lorem ipsum dolor</h3>
-      <div className="desc">
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam provident
-        maxime asperiores? Ipsam tempore at ex iste a facilis consectetur.
-      </div>
+      <h3>{project.title}</h3>
+      <div className="desc">{project.description}</div>
       <div className="tags">
-        <span>React</span>
-        <span>Node</span>
-        <span>MongoDB</span>
+        {project.tags.split(", ").map((tag, index) => (
+          <span key={index}>{tag}</span>
+        ))}
       </div>
     </ProjectWrapper>
   );
@@ -62,8 +68,13 @@ const ProjectWrapper = styled(motion.div)<any>`
         : `${colors.buttercream}`};
     margin-bottom: 1rem;
 
-    svg {
-      cursor: pointer;
+    a {
+      svg {
+        color: ${(props) =>
+          props.mode === "light"
+            ? `${colors.deep_blue_wave}`
+            : `${colors.buttercream}`};
+      }
     }
   }
 

@@ -24,7 +24,12 @@ const FeaturedProject = ({ project }: PropsT) => {
         duration: 0.8,
       }}
     >
-      <a href={project.website} className="project-image">
+      <a
+        href={project.website}
+        target="_blank"
+        rel="noreferrer"
+        className="project-image"
+      >
         <img src={project.image} alt="" />
       </a>
 
@@ -37,26 +42,30 @@ const FeaturedProject = ({ project }: PropsT) => {
           ))}
         </div>
         <div className="links">
-          <a href={project.github}>
+          <a href={project.github} target="_blank" rel="noreferrer">
             <GithubIcon />
           </a>
-          <a href={project.website}>
+          <a href={project.website} target="_blank" rel="noreferrer">
             <ExternalLinkIcon />
           </a>
         </div>
       </div>
 
       <div className="mobile-details">
-        <h3>Lorem ipsum dolor</h3>
+        <h3>{project.title}</h3>
         <div className="desc">{project.description}</div>
         <div className="tags">
-          <span>React</span>
-          <span>Node</span>
-          <span>MongoDB</span>
+          {project.tags.split(", ").map((tag, index) => (
+            <span key={index}>{tag}</span>
+          ))}
         </div>
         <div className="links">
-          <GithubIcon />
-          <ExternalLinkIcon />
+          <a href={project.github} target="_blank" rel="noreferrer">
+            <GithubIcon />
+          </a>
+          <a href={project.website} target="_blank" rel="noreferrer">
+            <ExternalLinkIcon />
+          </a>
         </div>
       </div>
     </ProjectWrapper>
