@@ -1,5 +1,7 @@
 export const TECHGUY_IMG =
   "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686348676/portfolio/images_uewo3l.png";
+export const ABOUT_IMG =
+  "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686387985/portfolio/IMG_20230610_095334_nitlmp.jpg";
 export const REACT_IMG = "/images/react.png";
 export const JAVASCRIPT_IMG = "/images/javascript.png";
 export const NODE_IMG = "/images/node.png";

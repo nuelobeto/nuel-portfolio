@@ -4,6 +4,7 @@ import { colors, fontSizes, media, shadow } from "./../config/style.config";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import useMode from "./../zustand/useMode";
+import { ABOUT_IMG } from "../assets/images";
 
 const experience = [
   {
@@ -95,7 +96,7 @@ const About = () => {
               </p>
             </div>
             <div className="image">
-              {/* <img src={TECHGUY_IMG} alt="" /> */}
+              <img src={ABOUT_IMG} alt="" />
             </div>
           </div>
         </motion.div>
@@ -251,22 +252,23 @@ const AboutWrapper = styled.div<any>`
 
     .image {
       width: 250px;
-      height: 250px;
+      aspect-ratio: 1/1;
       border-radius: 8px;
+      overflow: hidden;
       background-color: ${(props) =>
         props.mode === "light"
           ? `${colors.midnight_blue}`
           : `${colors.moonstone}`};
       @media (max-width: ${media.md}) {
         width: 200px;
-        height: 200px;
       }
 
-      /* img {
+      img {
+        display: block;
         width: 100%;
         aspect-ratio: 1/1;
         object-fit: contain;
-      } */
+      }
     }
   }
 
