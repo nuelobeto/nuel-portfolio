@@ -123,7 +123,7 @@ const Home = () => {
               </motion.button>
             </Link>
             <a
-              href="https://drive.google.com/file/d/1pCRi8ehw-f2nHP3dfy4y6LvCV8SwZruI/view?usp=sharing"
+              href="https://docs.google.com/document/d/1G2GH_RVg9q5Ml1Wa_I1c-lzDSuzf1eDbMWKpV8lBpjo/edit?usp=sharing"
               target="_blank"
               rel="noreferrer"
             >
