@@ -40,9 +40,10 @@ export const projectsData: SavedProjectT[] = [
   {
     _id: "4",
     title: "FAQ Accordion component",
-    image: "",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1687096101/portfolio/faq-desktop_jqcduq.png",
     description:
-      "The FAQ Accordion Component is a dynamic and interactive user interface element built with React. It is designed to efficiently present frequently asked questions (FAQs) and their corresponding answers in an organized and collapsible format. Users can easily navigate through the FAQs by expanding or collapsing each section, providing a seamless and intuitive experience.",
+      "FAQ Accordion Component with dynamic and interactive user interface element built with React. It is designed to efficiently present frequently asked questions (FAQs) and their corresponding answers in an organized and collapsible format.",
     tags: "React, Typescript",
     github: "https://github.com/nuelobeto/faq-component",
     website: "https://faq-component.netlify.app/",

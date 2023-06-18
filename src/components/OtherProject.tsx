@@ -33,6 +33,9 @@ const OtherProject = ({ project }: PropsT) => {
         </a>
       </div>
       <h3>{project.title}</h3>
+      <div className="image">
+        <img src={project.image} alt="" />
+      </div>
       <div className="desc">{project.description}</div>
       <div className="tags">
         {project.tags.split(", ").map((tag, index) => (
@@ -66,7 +69,7 @@ const ProjectWrapper = styled(motion.div)<any>`
       props.mode === "light"
         ? `${colors.deep_blue_wave}`
         : `${colors.buttercream}`};
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
 
     a {
       svg {
@@ -93,6 +96,20 @@ const ProjectWrapper = styled(motion.div)<any>`
         ? `${colors.stormy_night}`
         : `${colors.slate_grey}`};
     font-size: ${fontSizes.sm};
+  }
+
+  .image {
+    width: 100%;
+    aspect-ratio: 2/1;
+    background-color: gray;
+    border-radius: 8px;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   .tags {
