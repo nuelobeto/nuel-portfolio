@@ -42,9 +42,9 @@ const FeaturedProject = ({ project }: PropsT) => {
           ))}
         </div>
         <div className="links">
-          <a href={project.github} target="_blank" rel="noreferrer">
+          {project.github && <a href={project.github} target="_blank" rel="noreferrer">
             <GithubIcon />
-          </a>
+          </a>}
           <a href={project.website} target="_blank" rel="noreferrer">
             <ExternalLinkIcon />
           </a>

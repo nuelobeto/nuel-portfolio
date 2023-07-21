@@ -27,7 +27,7 @@ export type ProjectT = {
   image: any;
   description: string;
   tags: string;
-  github: string;
+  github?: string;
   website: string;
   category: string;
 };
@@ -38,7 +38,7 @@ export type SavedProjectT = {
   image: any;
   description: string;
   tags: string;
-  github: string;
+  github?: string;
   website: string;
   category: string;
 };

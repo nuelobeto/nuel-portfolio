@@ -3,6 +3,28 @@ import { SavedProjectT } from "../types/types";
 export const projectsData: SavedProjectT[] = [
   {
     _id: "1",
+    title: "FlowOps",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1689945951/portfolio/flowops_xu9ukc.png",
+    description:
+      "Service Monitoring Saas that provides operation insights on various services.",
+    tags: "React, JavaScript, Styled-Components",
+    website: "https://www.flowops.xyz/",
+    category: "featured",
+  },
+  {
+    _id: "2",
+    title: "StatementAI",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1688148152/portfolio/statementai_dgvtmb.png",
+    description:
+      "Saas application for creating compelling essays powered by GPT3.",
+    tags: "React, JavaScript, Styled-Components",
+    website: "https://www.flowops.xyz/",
+    category: "featured",
+  },
+  {
+    _id: "3",
     title: "Realtime Chat App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344790/portfolio/chat_rgsh2d.png",
@@ -14,7 +36,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "2",
+    _id: "4",
     title: "Authentication System",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686343885/portfolio/auth_pikawh.png",
@@ -26,7 +48,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "3",
+    _id: "5",
     title: "Todo List App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344268/portfolio/todo_thq22r.png",
@@ -38,7 +60,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "4",
+    _id: "6",
     title: "FAQ Accordion component",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1687096101/portfolio/faq-desktop_jqcduq.png",
