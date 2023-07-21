@@ -13,7 +13,7 @@ const addProject = async (payload: ProjectT) => {
   formData.append("title", payload.title);
   formData.append("description", payload.description);
   formData.append("tags", payload.tags);
-  formData.append("github", payload.github);
+  // formData.append("github", payload.github);
   formData.append("website", payload.website);
   formData.append("image", payload.image);
   formData.append("category", payload.category);
@@ -26,7 +26,7 @@ const updateProject = async (payload: ProjectT, id: string) => {
   formData.append("title", payload.title);
   formData.append("description", payload.description);
   formData.append("tags", payload.tags);
-  formData.append("github", payload.github);
+  // formData.append("github", payload.github);
   formData.append("website", payload.website);
   formData.append("image", payload.image);
   formData.append("category", payload.category);
