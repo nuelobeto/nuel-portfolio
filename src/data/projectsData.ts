@@ -7,7 +7,7 @@ export const projectsData: SavedProjectT[] = [
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1689945951/portfolio/flowops_xu9ukc.png",
     description:
-      "Service Monitoring Saas that provides operation insights on various services.",
+      "Web only Service Monitoring Saas that provides operation insights on various services.",
     tags: "React, JavaScript, Styled-Components",
     website: "https://www.flowops.xyz/",
     category: "featured",
