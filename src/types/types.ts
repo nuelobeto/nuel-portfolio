@@ -51,6 +51,6 @@ export type ProjectsT = {
 export type SkillT = {
   img: any;
   name: string;
-  level: string;
+  // level: string;
   color: string;
 };

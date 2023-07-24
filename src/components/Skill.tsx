@@ -5,13 +5,13 @@ import useMode from "./../zustand/useMode";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
-const Skill = ({ img, name, level, color }: SkillT) => {
+const Skill = ({ img, name, color }: SkillT) => {
   const { mode } = useMode((state) => state);
   const [progress, setProgress] = useState("0%");
 
-  useEffect(() => {
-    setProgress(level);
-  }, [level]);
+  // useEffect(() => {
+  //   setProgress(level);
+  // }, [level]);
 
   return (
     <SkillWrapper color={color} level={progress} mode={mode}>
@@ -19,14 +19,14 @@ const Skill = ({ img, name, level, color }: SkillT) => {
         <img src={img} alt="" />
         <span>{name}</span>
       </div>
-      <div className="status-bar">
+      {/* <div className="status-bar">
         <motion.div
           className="bar"
           animate={{ width: progress }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: 2 }}
         ></motion.div>
-      </div>
+      </div> */}
     </SkillWrapper>
   );
 };

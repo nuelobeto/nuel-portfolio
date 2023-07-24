@@ -19,37 +19,37 @@ const skills: SkillT[] = [
   {
     img: JAVASCRIPT_IMG,
     name: "Javascript",
-    level: "90%",
+    // level: "90%",
     color: "#F7DF1E",
   },
   {
     img: REACT_IMG,
     name: "React",
-    level: "80%",
+    // level: "80%",
     color: "#61DAFB",
   },
   {
     img: NODE_IMG,
     name: "Node",
-    level: "60%",
+    // level: "60%",
     color: "#3C873A",
   },
   {
     img: SOLIDITY_IMG,
     name: "Solidity",
-    level: "40%",
+    // level: "40%",
     color: "#212121",
   },
   {
     img: ETHERS_IMG,
     name: "Ethers JS",
-    level: "40%",
+    // level: "40%",
     color: "#8C8C8E",
   },
   {
     img: PYTHON_IMG,
     name: "Python",
-    level: "20%",
+    // level: "20%",
     color: "#3776AB",
   },
 ];
@@ -176,7 +176,7 @@ const Home = () => {
                 <Skill
                   img={skill.img}
                   name={skill.name}
-                  level={skill.level}
+                  // level={skill.level}
                   color={skill.color}
                 />
               </motion.div>
