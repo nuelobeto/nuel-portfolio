@@ -25,6 +25,17 @@ export const projectsData: SavedProjectT[] = [
   },
   {
     _id: "3",
+    title: "Ehioba & Company",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1693390302/portfolio/ehioba_mypjll.png",
+    description:
+      "Ehioba & Company is a progressive ESG consultancy committed to facilitating businesses on their path toward a more sustainable future.",
+    tags: "React, TypeScript, Styled-Components",
+    website: "https://ehiobaco.com/",
+    category: "featured",
+  },
+  {
+    _id: "4",
     title: "Realtime Chat App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344790/portfolio/chat_rgsh2d.png",
@@ -36,7 +47,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "4",
+    _id: "5",
     title: "Authentication System",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686343885/portfolio/auth_pikawh.png",
@@ -48,7 +59,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "5",
+    _id: "6",
     title: "Todo List App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344268/portfolio/todo_thq22r.png",
@@ -60,7 +71,7 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "6",
+    _id: "7",
     title: "FAQ Accordion component",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1687096101/portfolio/faq-desktop_jqcduq.png",
