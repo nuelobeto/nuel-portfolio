@@ -30,7 +30,7 @@ export const projectsData: SavedProjectT[] = [
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1693390302/portfolio/ehioba_mypjll.png",
     description:
       "Ehioba & Company is a progressive ESG consultancy committed to facilitating businesses on their path toward a more sustainable future.",
-    tags: "React, TypeScript, Styled-Components",
+    tags: "React, TypeScript, Node, Styled-Components",
     website: "https://ehiobaco.com/",
     category: "featured",
   },
