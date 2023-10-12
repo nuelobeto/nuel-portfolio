@@ -2,7 +2,6 @@ import { SavedProjectT } from "../types/types";
 
 export const projectsData: SavedProjectT[] = [
   {
-    _id: "1",
     title: "FlowOps",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1689945951/portfolio/flowops_xu9ukc.png",
@@ -13,53 +12,16 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
-    _id: "2",
     title: "StatementAI",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1688148152/portfolio/statementai_dgvtmb.png",
     description:
       "Saas application for creating compelling essays powered by GPT3.",
     tags: "React, JavaScript, Styled-Components",
-    website: "https://www.flowops.xyz/",
+    website: "https://statementai.io/",
     category: "featured",
   },
   {
-    _id: "3",
-    title: "Ehioba & Company",
-    image:
-      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1693390302/portfolio/ehioba_mypjll.png",
-    description:
-      "Ehioba & Company is a progressive ESG consultancy committed to facilitating businesses on their path toward a more sustainable future.",
-    tags: "React, TypeScript, Node, Styled-Components",
-    website: "https://ehiobaco.com/",
-    category: "featured",
-  },
-  {
-    _id: "4",
-    title: "Realtime Chat App",
-    image:
-      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344790/portfolio/chat_rgsh2d.png",
-    description:
-      "A Realtime Chat web app built with React, TypeScript, and Firebase. It enables users to send and receive text messages and share image files in real-time. The intuitive interface, seamless synchronization, and responsive design provide a smooth communication experience for modern users.",
-    tags: "React, Typescript, Firebase",
-    github: "https://github.com/nuelobeto/friendzone-firebase",
-    website: "https://friendzon3.netlify.app/",
-    category: "featured",
-  },
-  {
-    _id: "5",
-    title: "Authentication System",
-    image:
-      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686343885/portfolio/auth_pikawh.png",
-    description:
-      "An Authentication web App with a secure and user-friendly application developed with React, TypeScript, and Firebase. This app provides a robust authentication system for user registration, login, and password management. With Firebase's authentication services, the app ensures data privacy, scalability, and real-time synchronization.",
-    tags: "React, Typescript, Firebase",
-    github: "https://github.com/nuelobeto/react-firebase-auth",
-    website: "https://react-firebaze-auth.netlify.app/",
-    category: "featured",
-  },
-  {
-    _id: "6",
     title: "Todo List App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344268/portfolio/todo_thq22r.png",
@@ -67,19 +29,7 @@ export const projectsData: SavedProjectT[] = [
       "The Todo List app is a versatile task management tool built with React and designed to enhance productivity. With its light and dark mode options, users can customize the app's appearance to suit their preferences. The app enables users to effortlessly create, edit, and delete todos, empowering them to stay organized and focused on their daily tasks.",
     tags: "React, Typescript, Redux Toolkit",
     github: "https://github.com/nuelobeto/redux-toolkit-react-ts",
-    website: "https://redux-toolkit-todo-ts.netlify.app/",
+    website: "https://todopal.vercel.app/",
     category: "featured",
-  },
-  {
-    _id: "7",
-    title: "FAQ Accordion component",
-    image:
-      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1687096101/portfolio/faq-desktop_jqcduq.png",
-    description:
-      "FAQ Accordion Component with dynamic and interactive user interface element built with React. It is designed to efficiently present frequently asked questions (FAQs) and their corresponding answers in an organized and collapsible format.",
-    tags: "React, Typescript",
-    github: "https://github.com/nuelobeto/faq-component",
-    website: "https://faq-component.netlify.app/",
-    category: "other",
   },
 ];

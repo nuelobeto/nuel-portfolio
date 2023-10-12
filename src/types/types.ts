@@ -33,7 +33,6 @@ export type ProjectT = {
 };
 
 export type SavedProjectT = {
-  _id: string;
   title: string;
   image: any;
   description: string;
