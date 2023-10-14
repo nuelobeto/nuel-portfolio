@@ -24,10 +24,11 @@ export const projectsData: SavedProjectT[] = [
   {
     title: "Lyzerr",
     image:
-      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1689945951/portfolio/flowops_xu9ukc.png",
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1697295299/portfolio/lyzerr_lm5g4a.png",
     description:
       "Analysis web app with full authentication system and a responsive dashboard.",
     tags: "React, TypeScript, Tailwind, Node, MySQL",
+    github: "https://github.com/nuelobeto/react-node-mysql-auth",
     website: "https://lyzerr.vercel.app/",
     category: "featured",
   },

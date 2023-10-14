@@ -4,11 +4,11 @@ import Dashboard from "./../components/Dashboard";
 import FeaturedProject from "./../components/FeaturedProject";
 import useMode from "../zustand/useMode";
 import OtherProject from "../components/OtherProject";
-import useProject from "../zustand/useProject";
+import { projectsData } from "../data/projectsData";
 
 const Projects = () => {
   const { mode } = useMode((state) => state);
-  const { projects } = useProject((state) => state);
+  const projects = projectsData;
   const featuredProjects = projects.filter(
     (project) => project.category === "featured"
   );
