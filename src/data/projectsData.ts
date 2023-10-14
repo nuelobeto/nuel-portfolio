@@ -22,6 +22,16 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
+    title: "Lyzerr",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1689945951/portfolio/flowops_xu9ukc.png",
+    description:
+      "Analysis web app with full authentication system and a responsive dashboard.",
+    tags: "React, TypeScript, Tailwind, Node, MySQL",
+    website: "https://lyzerr.vercel.app/",
+    category: "featured",
+  },
+  {
     title: "Todo List App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344268/portfolio/todo_thq22r.png",
