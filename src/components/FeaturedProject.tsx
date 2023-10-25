@@ -42,9 +42,11 @@ const FeaturedProject = ({ project }: PropsT) => {
           ))}
         </div>
         <div className="links">
-          {project.github && <a href={project.github} target="_blank" rel="noreferrer">
-            <GithubIcon />
-          </a>}
+          {project.github && (
+            <a href={project.github} target="_blank" rel="noreferrer">
+              <GithubIcon />
+            </a>
+          )}
           <a href={project.website} target="_blank" rel="noreferrer">
             <ExternalLinkIcon />
           </a>
@@ -100,6 +102,10 @@ const ProjectWrapper = styled(motion.div)<any>`
     display: block;
     min-width: 450px;
     width: 60%;
+    aspect-ratio: 3/2;
+    background-color: gray;
+    border-radius: 8px;
+
     img {
       width: 100%;
       border-radius: 8px;
