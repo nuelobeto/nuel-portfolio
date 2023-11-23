@@ -33,6 +33,16 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
+    title: "Ehioba",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1693390302/portfolio/ehioba_mypjll.png",
+    description:
+      "Global and progressive Environmental, Social and Governance consultancy committed to building a future where economic success and social responsibility co-exist.",
+    tags: "React, TypeScript, Node, MongoDB",
+    website: "https://ehioba.com/",
+    category: "featured",
+  },
+  {
     title: "Todo List App",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1686344268/portfolio/todo_thq22r.png",
