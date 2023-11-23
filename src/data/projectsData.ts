@@ -22,6 +22,16 @@ export const projectsData: SavedProjectT[] = [
     category: "featured",
   },
   {
+    title: "Web3Ladies",
+    image:
+      "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1700750584/portfolio/Screenshot_2023-11-23_154057_sed7nl.png",
+    description:
+      "web3 community focused on raising the next generation of female disruptors in the Web3 ecosystem by equipping them with sought-after relevant Blockchain skills.",
+    tags: "Next, scss, Typescript",
+    website: "https://www.web3ladies.com/",
+    category: "featured",
+  },
+  {
     title: "Lyzerr",
     image:
       "https://res.cloudinary.com/dk9bt9lkn/image/upload/v1697295299/portfolio/lyzerr_lm5g4a.png",
